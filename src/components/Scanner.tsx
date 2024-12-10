@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
-import { Html5Qrcode } from 'html5-qrcode';
+import { useEffect, useRef } from "react";
+import { Html5Qrcode } from "html5-qrcode";
+import { BsQrCodeScan } from "react-icons/bs";
 
 interface ScannerProps {
   onScan: (data: string | null) => void;
@@ -15,7 +16,8 @@ const Scanner: React.FC<ScannerProps> = ({ onScan, isActive }) => {
     if (isActive) {
       const config = {
         fps: 10,
-        qrbox: { width: 250, height: 250 },
+        aspectRatio: 1,
+        // Remove fixed qrbox size to let it use container dimensions
       };
 
       scannerRef.current
@@ -36,18 +38,20 @@ const Scanner: React.FC<ScannerProps> = ({ onScan, isActive }) => {
       if (scannerRef.current && isActive) {
         scannerRef.current
           .stop()
-          .catch(error => console.error("Error stopping scanner:", error));
+          .catch((error) => console.error("Error stopping scanner:", error));
       }
     };
   }, [onScan, isActive]);
 
   return (
-    <div className="max-w-md mx-auto">
-      <div className="rounded-lg overflow-hidden border-4 border-blue-600">
-        <div id="reader" className="w-full">
+    <div className="max-w-[280px] mx-auto">
+      {" "}
+      {/* Reduced max-width */}
+      <div className="rounded-lg overflow-hidden border-4 border-blue-500 aspect-square">
+        <div id="reader" className="w-full h-full">
           {!isActive && (
-            <div className="p-4 text-center text-gray-500">
-              Click 'Start Scanning' to begin
+            <div className="h-full flex items-center justify-center text-gray-400">
+              <BsQrCodeScan size={45} /> {/* Reduced to 24px */}
             </div>
           )}
         </div>

@@ -19,13 +19,14 @@ const ScanQR = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow container mx-auto px-4 py-8">
+        <h2 className="text-2xl font-semibold text-blue-600 mb-6 text-center">Verify Student</h2>
         <Scanner onScan={handleScan} isActive={isScanning} />
         <div className="flex justify-center mt-4">
           <button
             onClick={() => setIsScanning(!isScanning)}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
-            {isScanning ? 'Stop Scanning' : 'Start Scanning'}
+            {isScanning ? 'Stop Scanning' : 'Scan QR Code'}
           </button>
         </div>
       </main>
