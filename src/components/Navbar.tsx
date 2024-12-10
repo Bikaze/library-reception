@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Logo from './common/Logo';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,10 +13,7 @@ const Navbar = () => {
     <nav className="bg-blue-600 p-4">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <img src="/logo.png" alt="Library Logo" className="h-8 md:h-10" />
-            <h1 className="text-white text-lg md:text-xl font-semibold">Library Reception</h1>
-          </div>
+          <Logo />
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-4">
