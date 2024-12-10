@@ -1,10 +1,13 @@
 // import Home from './pages/Home';
-import VerifyStudent from './pages/VerifyStudent';
+// import VerifyStudent from './pages/VerifyStudent';
+
+import LogIn from "./pages/LogIn";
 
 const App = () => {
   return (
     // <Home />
-    <VerifyStudent/>
+    // <VerifyStudent/>
+    <LogIn/>
   );
 };
 
