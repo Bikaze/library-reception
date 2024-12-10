@@ -1,6 +1,4 @@
-import { FiBook, FiClock } from 'react-icons/fi';
-import { BsClipboardData } from "react-icons/bs";
-import { BsQrCodeScan } from "react-icons/bs"
+import { BsClipboardData, BsQrCodeScan } from "react-icons/bs";
 
 const WhiteSection = () => {
   const cards = [
