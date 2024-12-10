@@ -1,16 +1,18 @@
 import { FiBook, FiClock } from 'react-icons/fi';
+import { BsClipboardData } from "react-icons/bs";
+import { BsQrCodeScan } from "react-icons/bs"
 
 const WhiteSection = () => {
   const cards = [
     {
-      icon: <FiBook className="w-6 h-6 md:w-7 md:h-7" />,
-      title: "Extensive Collection",
-      description: "Access thousands of books across various genres"
+      icon: <BsQrCodeScan className="w-6 h-6 md:w-7 md:h-7" />,
+      title: "KUGENZURA",
+      description: "Reba ko uwinjira yabisabiye uburenganzira"
     },
     {
-      icon: <FiClock className="w-6 h-6 md:w-7 md:h-7" />,
-      title: "24/7 Access",
-      description: "Browse and reserve books anytime, anywhere"
+      icon: <BsClipboardData className="w-6 h-6 md:w-7 md:h-7" />,
+      title: "GUHINDURA AMAKURU",
+      description: "Hindura amakuru y'uwinjira mu gihe hari amakosa mu myirondoro"
     }
   ];
 
@@ -18,7 +20,7 @@ const WhiteSection = () => {
     <div className="bg-white p-4 md:p-6 w-full">
       <div className="max-w-6xl mx-auto">
         <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
-          Start Your Reading Journey
+          IBIKORWA
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {cards.map((card, index) => (
