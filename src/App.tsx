@@ -1,7 +1,7 @@
 // import Home from './pages/Home';
-// import VerifyStudent from './pages/VerifyStudent';
+import VerifyStudent from './pages/VerifyStudent';
 
-import UpdateInfo from "./pages/UpdateInfo";
+// import UpdateInfo from "./pages/UpdateInfo";
 
 // import VerificationResult from "./pages/VerificationResult";
 
@@ -10,10 +10,10 @@ import UpdateInfo from "./pages/UpdateInfo";
 const App = () => {
   return (
     // <Home />
-    // <VerifyStudent/>
+    <VerifyStudent/>
     // <LogIn/>
     // <VerificationResult/>
-    <UpdateInfo/>
+    // <UpdateInfo/>
   );
 };
 
