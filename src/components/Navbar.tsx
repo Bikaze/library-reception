@@ -1,33 +1,32 @@
+// src/components/Navbar.tsx
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from './common/Logo';
 
 interface NavbarProps {
   isAuthenticated?: boolean;
   customBg?: string;
-  customActions?: Array<{
-    label: string;
-    onClick: () => void;
-  }>;
+  onSignOut?: () => void;
 }
 
 const Navbar = ({ 
   isAuthenticated = false, 
   customBg = "bg-blue-600",
-  customActions
+  onSignOut
 }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const defaultActions = [
-    { label: 'Update Info', onClick: () => {} },
-    { label: 'Verify Entry', onClick: () => {} },
-    { label: 'Sign Out', onClick: () => {} },
+    { label: 'Update Info', to: '/update' },
+    { label: 'Verify Entry', to: '/verify' },
+    { label: 'Sign Out', to: '#', onClick: onSignOut }
   ];
 
   const loginAction = [
-    { label: 'Login', onClick: () => {} }
+    { label: 'Login', to: '/login' }
   ];
 
-  const actions = customActions || (isAuthenticated ? defaultActions : loginAction);
+  const actions = isAuthenticated ? defaultActions : loginAction;
   const isSingleButton = actions.length === 1;
 
   return (
@@ -38,14 +37,23 @@ const Navbar = ({
           
           <div className={`hidden md:flex ${isSingleButton ? 'ml-auto' : 'space-x-4'}`}>
             {actions.map((action) => (
-              <button
-                key={action.label}
-                onClick={action.onClick}
-                className={`px-4 py-2 text-white hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap
-                  ${isSingleButton ? 'ml-4' : ''}`}
-              >
-                {action.label}
-              </button>
+              action.onClick ? (
+                <button
+                  key={action.label}
+                  onClick={action.onClick}
+                  className="px-4 py-2 text-white hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap"
+                >
+                  {action.label}
+                </button>
+              ) : (
+                <Link
+                  key={action.label}
+                  to={action.to}
+                  className="px-4 py-2 text-white hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap"
+                >
+                  {action.label}
+                </Link>
+              )
             ))}
           </div>
 
@@ -65,25 +73,35 @@ const Navbar = ({
           </button>
 
           {isSingleButton && (
-            <button
+            <Link
+              to={actions[0].to}
               className="md:hidden px-4 py-2 text-white hover:bg-blue-700 rounded-lg transition-colors whitespace-nowrap"
-              onClick={actions[0].onClick}
             >
               {actions[0].label}
-            </button>
+            </Link>
           )}
         </div>
 
         {isMenuOpen && !isSingleButton && (
           <div className="mt-4 md:hidden">
             {actions.map((action) => (
-              <button
-                key={action.label}
-                onClick={action.onClick}
-                className="block w-full text-left px-4 py-2 text-white hover:bg-blue-700 rounded-lg transition-colors"
-              >
-                {action.label}
-              </button>
+              action.onClick ? (
+                <button
+                  key={action.label}
+                  onClick={action.onClick}
+                  className="block w-full text-left px-4 py-2 text-white hover:bg-blue-700 rounded-lg transition-colors"
+                >
+                  {action.label}
+                </button>
+              ) : (
+                <Link
+                  key={action.label}
+                  to={action.to}
+                  className="block w-full text-left px-4 py-2 text-white hover:bg-blue-700 rounded-lg transition-colors"
+                >
+                  {action.label}
+                </Link>
+              )
             ))}
           </div>
         )}

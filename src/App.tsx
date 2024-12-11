@@ -1,26 +1,9 @@
-// import Home from './pages/Home';
-// import VerifyStudent from './pages/VerifyStudent';
-
-import ServerError from "./pages/ServerError";
-
-// import NotFound from "./pages/NotFound";
-
-// import UpdateInfo from "./pages/UpdateInfo";
-
-// import VerificationResult from "./pages/VerificationResult";
-
-// import LogIn from "./pages/LogIn";
+// src/App.tsx
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 
 const App = () => {
-  return (
-    // <Home />
-    // <VerifyStudent/>
-    // <LogIn/>
-    // <VerificationResult/>
-    // <UpdateInfo/>
-    // <NotFound/>
-    <ServerError/>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
