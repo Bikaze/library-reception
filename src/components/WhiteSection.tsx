@@ -22,7 +22,14 @@ const WhiteSection = () => {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {cards.map((card, index) => (
-            <div key={index} className="p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow bg-gray-50 h-[200px] md:h-[250px] flex flex-col justify-center">
+            <div 
+              key={index} 
+              className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-white to-gray-50
+                shadow-[0_10px_30px_rgba(8,_112,_184,_0.5)]
+                hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]
+                transition-all duration-300 transform hover:scale-[1.02]
+                h-[200px] md:h-[250px] flex flex-col justify-center"
+            >
               <div className="flex items-center mb-4">
                 <div className="text-blue-600 mr-4">{card.icon}</div>
                 <h4 className="text-xl md:text-2xl font-semibold">{card.title}</h4>
