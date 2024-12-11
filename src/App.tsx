@@ -1,5 +1,9 @@
 // import Home from './pages/Home';
-import VerifyStudent from './pages/VerifyStudent';
+// import VerifyStudent from './pages/VerifyStudent';
+
+import ServerError from "./pages/ServerError";
+
+// import NotFound from "./pages/NotFound";
 
 // import UpdateInfo from "./pages/UpdateInfo";
 
@@ -10,10 +14,12 @@ import VerifyStudent from './pages/VerifyStudent';
 const App = () => {
   return (
     // <Home />
-    <VerifyStudent/>
+    // <VerifyStudent/>
     // <LogIn/>
     // <VerificationResult/>
     // <UpdateInfo/>
+    // <NotFound/>
+    <ServerError/>
   );
 };
 
