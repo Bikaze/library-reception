@@ -5,7 +5,6 @@ import PageHeader from '../components/common/PageHeader';
 import type { StudentDetails } from '../types/student';
 
 const UpdateInfo = () => {
-  throw new Error('This is a test error');
   const [searchRegNo, setSearchRegNo] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [studentData, setStudentData] = useState<StudentDetails | null>(null);
